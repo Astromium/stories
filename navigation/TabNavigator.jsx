@@ -9,6 +9,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AddStoryScreen from "../screens/AddStoryScreen";
 import AddButton from "../components/AddButton";
 import SettingsScreen from "../screens/SettingsScreen";
+import EditStoryScreen from "../screens/EditStoryScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -65,6 +66,16 @@ const TabNavigator = () => {
         options={({ navigation }) => ({
           tabBarButton: () => (
             <AddButton onPress={() => navigation.navigate("settings")} />
+          ),
+        })}
+      />
+
+      <Tab.Screen
+        name="settings"
+        component={EditStoryScreen}
+        options={({ navigation }) => ({
+          tabBarButton: () => (
+            <AddButton onPress={() => navigation.navigate("edit-story")} />
           ),
         })}
       />
